@@ -316,36 +316,35 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Cert 1 -->
-                <a href="https://drive.google.com/file/d/1JTU1kw5yHgzLyy1v6t7Xh-HPwB7lqAQC/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="group bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between hover:border-brand-500 hover:shadow-md transition-all duration-200 active:scale-[0.99] touch-manipulation">
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs border border-emerald-200">
-                                Dec 2025
-                            </span>
-                            <div class="flex items-center gap-2">
-                                <span class="text-xs font-semibold text-brand-600 opacity-0 group-hover:opacity-100 transition-opacity hidden sm:inline">
-                                    Preview <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                                </span>
-                                <i class="fa-solid fa-wheat-awn text-emerald-500 text-lg group-hover:scale-110 transition-transform"></i>
-                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs border border-emerald-200">Dec 2025</span>
+                            <i class="fa-solid fa-wheat-awn text-emerald-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
-                            NADI Mahir Asas – Mahir Pertanian Pintar
-                        </h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">NADI Mahir Asas – Mahir Pertanian Pintar</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">NADI X Pembelajaran Sepanjang Hayat</p>
                     </div>
-                    
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span class="flex items-center gap-1.5 font-medium">
-                            Smart Agriculture Tech
-                        </span>
-                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
-                            <span>View Preview</span>
-                            <i class="fa-solid fa-up-right-from-square text-xs"></i>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src="https://drive.google.com/file/d/1kxe1usd4GZaocsTbK7qbWKGGRN_k2-Xx/view?usp=sharing" 
+                                 alt="Certificate Preview" 
+                                 class="w-full h-48 sm:h-60 object-cover rounded-xl border border-slate-200 shadow-inner">
                         </div>
                     </div>
-                </a>
-
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Smart Agriculture Tech</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
                 <!-- Cert 2 -->
                 <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
                     <div>
@@ -764,6 +763,22 @@
                 toast.classList.remove('translate-y-0', 'opacity-100');
                 toast.classList.add('translate-y-24', 'opacity-0');
             }, 3500);
+        }
+
+        function toggleCertCard(card) {
+            const content = card.querySelector('.expandable-content');
+            const chevron = card.querySelector('.chevron-icon');
+            const expandText = card.querySelector('.expand-text');
+
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                chevron.style.transform = 'rotate(0deg)';
+                expandText.textContent = 'Tap to expand';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                chevron.style.transform = 'rotate(180deg)';
+                expandText.textContent = 'Tap to collapse';
+            }
         }
     </script>
 </body>
