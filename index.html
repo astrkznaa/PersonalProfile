@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Nik Amir Zakwan | Software Developer & Multimedia Specialist</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -39,23 +39,41 @@
         }
     </script>
     <style>
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+        /* --- Android & Mobile Performance Fixes --- */
+        * {
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
         }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transform: translateZ(0); /* GPU acceleration for Android */
+        }
+
         .hero-gradient {
             background: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.12) 0%, rgba(14, 165, 233, 0.08) 50%, rgba(255, 255, 255, 0) 100%);
         }
+
         .timeline-line {
             background: linear-gradient(180deg, #6366f1 0%, #0EA5E9 100%);
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-brand-500 selection:text-white">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo / Name -->
             <a href="#" class="flex items-center gap-3 group">
@@ -70,38 +88,38 @@
 
             <!-- Desktop Nav Tabs -->
             <nav class="hidden md:flex items-center gap-1 bg-slate-100/80 p-1.5 rounded-full border border-slate-200">
-                <a href="#academics" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-600 rounded-full hover:bg-white transition-all shadow-none hover:shadow-sm">
+                <a href="#academics" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-600 rounded-full hover:bg-white transition-all">
                     <i class="fa-solid fa-graduation-cap mr-1.5 text-xs"></i> Academics
                 </a>
-                <a href="#certifications" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-600 rounded-full hover:bg-white transition-all shadow-none hover:shadow-sm">
+                <a href="#certifications" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-600 rounded-full hover:bg-white transition-all">
                     <i class="fa-solid fa-certificate mr-1.5 text-xs"></i> Certifications
                 </a>
-                <a href="#experiences" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-600 rounded-full hover:bg-white transition-all shadow-none hover:shadow-sm">
+                <a href="#experiences" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-600 rounded-full hover:bg-white transition-all">
                     <i class="fa-solid fa-briefcase mr-1.5 text-xs"></i> Experiences
                 </a>
-                <a href="#contact" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-600 rounded-full hover:bg-white transition-all shadow-none hover:shadow-sm">
+                <a href="#contact" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-600 rounded-full hover:bg-white transition-all">
                     <i class="fa-solid fa-paper-plane mr-1.5 text-xs"></i> Contact Me
                 </a>
             </nav>
 
             <!-- Mobile Menu Toggle Button -->
-            <button id="menu-btn" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+            <button id="menu-btn" class="md:hidden p-3 rounded-xl text-slate-600 hover:text-brand-600 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
             </button>
         </div>
 
         <!-- Mobile Dropdown Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-2">
-            <a href="#academics" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">
+        <div id="mobile-menu" class="hidden md:hidden bg-white/98 backdrop-blur-lg border-b border-slate-200 px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#academics" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">
                 <i class="fa-solid fa-graduation-cap w-6 text-brand-500"></i> Academics
             </a>
-            <a href="#certifications" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">
+            <a href="#certifications" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">
                 <i class="fa-solid fa-certificate w-6 text-brand-500"></i> Certifications
             </a>
-            <a href="#experiences" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">
+            <a href="#experiences" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">
                 <i class="fa-solid fa-briefcase w-6 text-brand-500"></i> Experiences
             </a>
-            <a href="#contact" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">
+            <a href="#contact" class="mobile-link flex items-center px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">
                 <i class="fa-solid fa-paper-plane w-6 text-brand-500"></i> Contact Me
             </a>
         </div>
@@ -121,7 +139,7 @@
                         Available for Work & Collaboration
                     </div>
                     
-                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
                         Hi, I'm <br class="hidden sm:inline"/>
                         <span class="bg-gradient-to-r from-brand-600 via-brand-500 to-brand-accent bg-clip-text text-transparent">
                             Nik Amir Zakwan
@@ -168,7 +186,7 @@
                                  class="w-full h-full object-cover rounded-2xl"
                                  onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('photo-fallback').classList.remove('hidden');" />
                             
-                            <!-- Fallback UI if image fails or before custom upload -->
+                            <!-- Fallback UI if image fails -->
                             <div id="photo-fallback" class="hidden flex flex-col items-center justify-center">
                                 <div class="w-20 h-20 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center text-3xl font-bold mb-3">
                                     NZ
@@ -203,25 +221,22 @@
             </div>
 
             <!-- Vertical Sequence Timeline -->
-            <div class="max-w-4xl mx-auto relative px-4 sm:px-0">
+            <div class="max-w-4xl mx-auto relative px-2 sm:px-0">
                 <!-- Center Vertical Line -->
-                <div class="absolute left-8 sm:left-1/2 top-0 bottom-0 w-1 timeline-line -translate-x-1/2 rounded-full"></div>
+                <div class="absolute left-6 sm:left-1/2 top-0 bottom-0 w-1 timeline-line -translate-x-1/2 rounded-full"></div>
 
                 <div class="space-y-12">
                     
                     <!-- 1. Bachelor's Degree -->
                     <div class="relative flex flex-col sm:flex-row items-start group">
                         <!-- Timeline Node Dot -->
-                        <div class="absolute left-8 sm:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-600 text-white border-4 border-white shadow-md flex items-center justify-center z-10 group-hover:scale-110 transition-transform">
+                        <div class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-600 text-white border-4 border-slate-50 shadow-md flex items-center justify-center z-10">
                             <i class="fa-solid fa-user-graduate text-sm"></i>
                         </div>
 
-                        <!-- Content Card (Right side on desktop) -->
-                        <div class="ml-16 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right order-2 sm:order-1 hidden sm:block">
-                            <!-- Empty left block for layout balance -->
-                        </div>
-                        <div class="ml-16 sm:ml-0 sm:w-1/2 sm:pl-12 order-2 sm:order-2">
-                            <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition-shadow">
+                        <div class="ml-14 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right order-2 sm:order-1 hidden sm:block"></div>
+                        <div class="ml-14 sm:ml-0 sm:w-1/2 sm:pl-12 order-2 sm:order-2 w-full">
+                            <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80">
                                 <span class="inline-block px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold mb-2">
                                     Mar 2019 – Aug 2023 (5 Years)
                                 </span>
@@ -239,14 +254,12 @@
 
                     <!-- 2. Foundation -->
                     <div class="relative flex flex-col sm:flex-row items-start group">
-                        <!-- Timeline Node Dot -->
-                        <div class="absolute left-8 sm:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-accent text-white border-4 border-white shadow-md flex items-center justify-center z-10 group-hover:scale-110 transition-transform">
+                        <div class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-brand-accent text-white border-4 border-slate-50 shadow-md flex items-center justify-center z-10">
                             <i class="fa-solid fa-book-open text-sm"></i>
                         </div>
 
-                        <!-- Content Card (Left side on desktop) -->
-                        <div class="ml-16 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right order-2 sm:order-1">
-                            <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition-shadow">
+                        <div class="ml-14 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right order-2 sm:order-1 w-full sm:w-1/2">
+                            <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80">
                                 <span class="inline-block px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-semibold mb-2">
                                     June 2017 – Nov 2018 (1 Year)
                                 </span>
@@ -260,24 +273,18 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="ml-16 sm:ml-0 sm:w-1/2 sm:pl-12 order-2 sm:order-2 hidden sm:block">
-                            <!-- Empty right block for layout balance -->
-                        </div>
+                        <div class="ml-14 sm:ml-0 sm:w-1/2 sm:pl-12 order-2 sm:order-2 hidden sm:block"></div>
                     </div>
 
                     <!-- 3. SPM -->
                     <div class="relative flex flex-col sm:flex-row items-start group">
-                        <!-- Timeline Node Dot -->
-                        <div class="absolute left-8 sm:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-700 text-white border-4 border-white shadow-md flex items-center justify-center z-10 group-hover:scale-110 transition-transform">
+                        <div class="absolute left-6 sm:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-slate-700 text-white border-4 border-slate-50 shadow-md flex items-center justify-center z-10">
                             <i class="fa-solid fa-school text-sm"></i>
                         </div>
 
-                        <!-- Content Card (Right side on desktop) -->
-                        <div class="ml-16 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right order-2 sm:order-1 hidden sm:block">
-                            <!-- Empty left block -->
-                        </div>
-                        <div class="ml-16 sm:ml-0 sm:w-1/2 sm:pl-12 order-2 sm:order-2">
-                            <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md transition-shadow">
+                        <div class="ml-14 sm:ml-0 sm:w-1/2 sm:pr-12 sm:text-right order-2 sm:order-1 hidden sm:block"></div>
+                        <div class="ml-14 sm:ml-0 sm:w-1/2 sm:pl-12 order-2 sm:order-2 w-full">
+                            <div class="glass-card p-6 rounded-2xl shadow-sm border border-slate-200/80">
                                 <span class="inline-block px-3 py-1 rounded-full bg-slate-200 text-slate-700 text-xs font-semibold mb-2">
                                     Jan 2012 – Dec 2016 (5 Years)
                                 </span>
@@ -308,18 +315,14 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <!-- Cert 1: Dec 2025 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between group">
+                <!-- Cert 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs border border-emerald-200">
-                                Dec 2025
-                            </span>
-                            <i class="fa-solid fa-wheat-awn text-emerald-500 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs border border-emerald-200">Dec 2025</span>
+                            <i class="fa-solid fa-wheat-awn text-emerald-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
-                            NADI Mahir Asas – Mahir Pertanian Pintar
-                        </h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">NADI Mahir Asas – Mahir Pertanian Pintar</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">NADI X Pembelajaran Sepanjang Hayat</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
@@ -328,18 +331,14 @@
                     </div>
                 </div>
 
-                <!-- Cert 2: Apr 2025 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between group">
+                <!-- Cert 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-bold text-xs border border-indigo-200">
-                                Apr 2025
-                            </span>
-                            <i class="fa-solid fa-camera text-indigo-500 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-bold text-xs border border-indigo-200">Apr 2025</span>
+                            <i class="fa-solid fa-camera text-indigo-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
-                            NADI Mahir Asas – Mahir Foto
-                        </h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">NADI Mahir Asas – Mahir Foto</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">NADI X Pembelajaran Sepanjang Hayat</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
@@ -348,18 +347,14 @@
                     </div>
                 </div>
 
-                <!-- Cert 3: Oct 2023 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between group">
+                <!-- Cert 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 font-bold text-xs border border-sky-200">
-                                Oct 2023
-                            </span>
-                            <i class="fa-solid fa-brain text-sky-500 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 font-bold text-xs border border-sky-200">Oct 2023</span>
+                            <i class="fa-solid fa-brain text-sky-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
-                            Introduction to Azure Machine Learning
-                        </h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Introduction to Azure Machine Learning</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">STYAVA.DEV</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
@@ -368,18 +363,14 @@
                     </div>
                 </div>
 
-                <!-- Cert 4: Aug 2023 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between group">
+                <!-- Cert 4 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-700 font-bold text-xs border border-brand-200">
-                                Aug 2023
-                            </span>
-                            <i class="fa-solid fa-graduation-cap text-brand-500 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-700 font-bold text-xs border border-brand-200">Aug 2023</span>
+                            <i class="fa-solid fa-graduation-cap text-brand-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
-                            Bachelors of Science in Software Convergence
-                        </h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Bachelors of Science in Software Convergence</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">Konkuk University</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
@@ -388,19 +379,15 @@
                     </div>
                 </div>
 
-                <!-- Cert 5: Feb 2019 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between group">
+                <!-- Cert 5 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 font-bold text-xs border border-rose-200">
-                                Feb 2019
-                            </span>
-                            <i class="fa-solid fa-language text-rose-500 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 font-bold text-xs border border-rose-200">Feb 2019</span>
+                            <i class="fa-solid fa-language text-rose-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
-                            Korean Language Training Intensive Course
-                        </h3>
-                        <p class="text-xs text-slate-500 font-medium mb-3">Ewha Language Center (ELC), Ewha Womans University</p>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Korean Language Training Intensive Course</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Ewha Language Center, Ewha Womans University</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
                         <span>Linguistic Proficiency</span>
@@ -408,18 +395,14 @@
                     </div>
                 </div>
 
-                <!-- Cert 6: Nov 2018 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between group">
+                <!-- Cert 6 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-bold text-xs border border-purple-200">
-                                Nov 2018
-                            </span>
-                            <i class="fa-solid fa-flask text-purple-500 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-bold text-xs border border-purple-200">Nov 2018</span>
+                            <i class="fa-solid fa-flask text-purple-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
-                            Foundation in Science & Tech for Korean University
-                        </h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Foundation in Science & Tech for Korean University</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">Kementerian Pendidikan Tinggi (KPT)</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
@@ -428,18 +411,14 @@
                     </div>
                 </div>
 
-                <!-- Cert 7: Mar 2017 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between group md:col-span-2 lg:col-span-1">
+                <!-- Cert 7 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between md:col-span-2 lg:col-span-1">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">
-                                Mar 2017
-                            </span>
-                            <i class="fa-solid fa-award text-slate-500 text-lg group-hover:scale-110 transition-transform"></i>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">Mar 2017</span>
+                            <i class="fa-solid fa-award text-slate-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
-                            Sijil Pelajaran Malaysia (SPM)
-                        </h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Sijil Pelajaran Malaysia (SPM)</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">Kementerian Pendidikan Malaysia (KPM)</p>
                     </div>
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
@@ -460,9 +439,8 @@
             </div>
 
             <div class="space-y-6">
-
                 <!-- Item 1 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 transition-all border border-slate-200">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div>
                             <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md uppercase tracking-wider">Active Role</span>
@@ -473,12 +451,12 @@
                         </div>
                     </div>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Contributed actively in managing and transporting mortuary (jenazah) operations. Applied media production skills to photograph and document mortuary management procedures for informational and organizational records.
+                        Contributed actively in managing and transporting mortuary (jenazah) operations. Applied media production skills to photograph and document mortuary management procedures.
                     </p>
                 </div>
 
                 <!-- Item 2 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 transition-all border border-slate-200">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div>
                             <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md uppercase tracking-wider">Community Engagement</span>
@@ -494,7 +472,7 @@
                 </div>
 
                 <!-- Item 3 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 transition-all border border-slate-200">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div>
                             <span class="text-xs font-bold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-md uppercase tracking-wider">Media Support</span>
@@ -510,7 +488,7 @@
                 </div>
 
                 <!-- Item 4 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 transition-all border border-slate-200">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div>
                             <span class="text-xs font-bold text-sky-600 bg-sky-50 px-2.5 py-1 rounded-md uppercase tracking-wider">Professional Upskilling</span>
@@ -526,7 +504,7 @@
                 </div>
 
                 <!-- Item 5 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 transition-all border border-slate-200">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div>
                             <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md uppercase tracking-wider">Creative Lead</span>
@@ -542,7 +520,7 @@
                 </div>
 
                 <!-- Item 6 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 transition-all border border-slate-200">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div>
                             <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-md uppercase tracking-wider">Soft Skills Bootcamp</span>
@@ -553,12 +531,12 @@
                         </div>
                     </div>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Participated in an intensive leadership bootcamp organized by Lembaga Kemajuan Kelantan Selatan (KESEDAR) focused on essential interpersonal soft skills, executive body language comprehension, and critical thinking frameworks.
+                        Participated in an intensive leadership bootcamp organized by Lembaga Kemajuan Kelantan Selatan (KESEDAR) focused on essential interpersonal soft skills and critical thinking frameworks.
                     </p>
                 </div>
 
                 <!-- Item 7 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 transition-all border border-slate-200">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div>
                             <span class="text-xs font-bold text-rose-600 bg-rose-50 px-2.5 py-1 rounded-md uppercase tracking-wider">International Experience</span>
@@ -574,7 +552,7 @@
                 </div>
 
                 <!-- Item 8 -->
-                <div class="glass-card rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 transition-all border border-slate-200">
+                <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-200">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                         <div>
                             <span class="text-xs font-bold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md uppercase tracking-wider">Mentorship</span>
@@ -585,7 +563,7 @@
                         </div>
                     </div>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Guided and trained secondary school students participating in the national inter-MRSM Robofair. Mentored students in conceiving, assembling, and programming hardware solutions using Arduino and Lego NXT / EV3 platforms.
+                        Guided and trained secondary school students participating in the national inter-MRSM Robofair, mentoring them in assembling and programming hardware solutions using Arduino and Lego NXT / EV3 platforms.
                     </p>
                 </div>
 
@@ -601,81 +579,79 @@
                 <div class="w-16 h-1 bg-brand-600 mx-auto rounded-full"></div>
             </div>
 
-            <!-- Sorted Formal & Important First -->
             <div class="max-w-3xl mx-auto space-y-4">
-
-                <!-- 1. Email (Most Formal) -->
-                <a href="mailto:astarothzakwan99@gmail.com" class="flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500 transition-all group">
+                <!-- 1. Email -->
+                <a href="mailto:astarothzakwan99@gmail.com" class="flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-500 transition-all group">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center text-xl">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
                             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">1. Formal Email</span>
-                            <span class="font-medium text-slate-900 group-hover:text-brand-600 transition-colors">astarothzakwan99@gmail.com</span>
+                            <span class="font-medium text-slate-900 group-hover:text-brand-600">astarothzakwan99@gmail.com</span>
                         </div>
                     </div>
                     <div class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold group-hover:bg-brand-600 group-hover:text-white transition-colors flex items-center gap-2">
-                        <span>Send Email</span>
+                        <span>Send</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </div>
                 </a>
 
-                <!-- 2. Contact Phone Number -->
-                <a href="tel:+601111044935" class="flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500 transition-all group">
+                <!-- 2. Phone -->
+                <a href="tel:+601111044935" class="flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-500 transition-all group">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl">
                             <i class="fa-solid fa-phone"></i>
                         </div>
                         <div>
                             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">2. Direct Contact Number</span>
-                            <span class="font-medium text-slate-900 group-hover:text-brand-600 transition-colors">(+60) 011-1104-4935</span>
+                            <span class="font-medium text-slate-900 group-hover:text-brand-600">(+60) 011-1104-4935</span>
                         </div>
                     </div>
                     <div class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold group-hover:bg-brand-600 group-hover:text-white transition-colors flex items-center gap-2">
-                        <span>Call Phone</span>
+                        <span>Call</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </div>
                 </a>
 
-                <!-- 3. LinkedIn / Canva Portfolio -->
-                <a href="https://astralkizunaa.my.canva.site/my-portfolio" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500 transition-all group">
+                <!-- 3. LinkedIn -->
+                <a href="https://astralkizunaa.my.canva.site/my-portfolio" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-500 transition-all group">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <div class="w-12 h-12 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center text-xl">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </div>
                         <div>
                             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">3. Professional Profile & Portfolio</span>
-                            <span class="font-medium text-slate-900 group-hover:text-brand-600 transition-colors">LinkedIn & Canva Showcase</span>
+                            <span class="font-medium text-slate-900 group-hover:text-brand-600">LinkedIn & Canva Showcase</span>
                         </div>
                     </div>
                     <div class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold group-hover:bg-brand-600 group-hover:text-white transition-colors flex items-center gap-2">
-                        <span>View Profile</span>
+                        <span>View</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                     </div>
                 </a>
 
                 <!-- 4. JobStreet -->
-                <a href="https://astralkizunaa.my.canva.site/my-portfolio" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-500 transition-all group">
+                <a href="https://astralkizunaa.my.canva.site/my-portfolio" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm hover:border-brand-500 transition-all group">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                        <div class="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl">
                             <i class="fa-solid fa-briefcase"></i>
                         </div>
                         <div>
                             <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">4. JobStreet Profile</span>
-                            <span class="font-medium text-slate-900 group-hover:text-brand-600 transition-colors">Career Profile & Credentials</span>
+                            <span class="font-medium text-slate-900 group-hover:text-brand-600">Career Profile & Credentials</span>
                         </div>
                     </div>
                     <div class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 text-xs font-semibold group-hover:bg-brand-600 group-hover:text-white transition-colors flex items-center gap-2">
-                        <span>JobStreet</span>
+                        <span>Open</span>
                         <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                     </div>
                 </a>
 
-                <!-- 5. WhatsApp (Instant Chat) -->
-                <a href="https://wa.me/601111044935" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-5 rounded-2xl bg-emerald-500 text-white shadow-md hover:shadow-lg hover:bg-emerald-600 transition-all group">
+                <!-- 5. WhatsApp -->
+                <a href="https://wa.me/601111044935" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-5 rounded-2xl bg-emerald-500 text-white shadow-md hover:bg-emerald-600 transition-all group">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                        <div class="w-12 h-12 rounded-xl bg-white/20 text-white flex items-center justify-center text-2xl">
                             <i class="fa-brands fa-whatsapp"></i>
                         </div>
                         <div>
@@ -684,11 +660,10 @@
                         </div>
                     </div>
                     <div class="px-4 py-2 rounded-xl bg-white/20 text-white text-xs font-semibold hover:bg-white/30 transition-colors flex items-center gap-2">
-                        <span>Message Now</span>
+                        <span>Message</span>
                         <i class="fa-solid fa-paper-plane text-xs"></i>
                     </div>
                 </a>
-
             </div>
         </section>
 
@@ -712,18 +687,16 @@
         </div>
     </footer>
 
-    <!-- Notification Toast for Downloads -->
+    <!-- Notification Toast -->
     <div id="toast" class="fixed bottom-6 right-6 bg-slate-900 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 z-50">
         <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
         <span id="toast-message" class="text-sm font-medium">Downloading document...</span>
     </div>
 
-    <!-- Script for interactive elements -->
+    <!-- Script -->
     <script>
-        // Set dynamic current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Mobile menu toggle logic
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -739,7 +712,6 @@
             }
         });
 
-        // Close mobile menu when a nav link is clicked
         document.querySelectorAll('.mobile-link').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
@@ -748,7 +720,6 @@
             });
         });
 
-        // Interactive Toast triggering for Resume / CV Downloads
         function triggerDownload(docType) {
             const toast = document.getElementById('toast');
             const toastMessage = document.getElementById('toast-message');
