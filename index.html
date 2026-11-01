@@ -73,7 +73,7 @@
 <body class="bg-slate-50 text-slate-800 font-sans selection:bg-brand-500 selection:text-white">
 
     <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <!-- Logo / Name -->
             <a href="#" class="flex items-center gap-3 group">
@@ -124,6 +124,8 @@
             </a>
         </div>
     </header>
+
+    <div class="h-14 w-full"></div>
 
     <!-- Main Content Container -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-24">
@@ -320,10 +322,196 @@
                 <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-bold text-xs border border-emerald-200">Dec 2025</span>
-                            <i class="fa-solid fa-wheat-awn text-emerald-500 text-lg"></i>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">Oct 2026</span>
+                            <i class="fa-solid fa-award text-slate-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">NADI Mahir Asas – Mahir Pertanian Pintar</h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">VEX Robotics Certified Educator - VEX VR</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">VEX Robotics / REC Foundation</p>
+                    </div>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src="https://lh3.googleusercontent.com/d/14O2tnSKIPFgd1mrj8BlVhreYQmYu6f_O" 
+                                 alt="Certificate Preview" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">STEM Educator</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 2 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">Oct 2026</span>
+                            <i class="fa-solid fa-award text-slate-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">VEX Robotics Certified Educator - VEX AIM</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">VEX Robotics / REC Foundation</p>
+                    </div>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src="https://lh3.googleusercontent.com/d/1M2Ec8LgIZUFb1AKSw7oQzpA48_Kn0dHm" 
+                                 alt="Certificate Preview" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">STEM Educator</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 3 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">Oct 2026</span>
+                            <i class="fa-solid fa-award text-slate-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">VEX Robotics Certified Educator - VEX GO</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">VEX Robotics / REC Foundation</p>
+                    </div>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src="https://lh3.googleusercontent.com/d/1M2Ec8LgIZUFb1AKSw7oQzpA48_Kn0dHm" 
+                                 alt="Certificate Preview" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">STEM Educator</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 4 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">Oct 2026</span>
+                            <i class="fa-solid fa-award text-slate-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">VEX Robotics Certified Educator - VEX 123</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">VEX Robotics / REC Foundation</p>
+                    </div>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src="https://lh3.googleusercontent.com/d/1M2Ec8LgIZUFb1AKSw7oQzpA48_Kn0dHm" 
+                                 alt="Certificate Preview" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">STEM Educator</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 5 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">Sept 2026</span>
+                            <i class="fa-solid fa-award text-slate-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Siemens TIA Portal Service 1 (TIA SERV-1)</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">SITRAIN Malaysia</p>
+                    </div>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Automation Engineering</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 6 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">Sept 2026</span>
+                            <i class="fa-solid fa-award text-slate-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Siemens TIA Portal Basic PLC (TIA BPLC)</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">SITRAIN Malaysia</p>
+                    </div>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Automation Engineering</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 7 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-bold text-xs border border-indigo-200">Dec 2025</span>
+                            <i class="fa-solid fa-certificate text-indigo-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">NADI Mahir Asas - Mahir Pertanian Pintar</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">NADI X Pembelajaran Sepanjang Hayat</p>
                     </div>
                 
@@ -331,113 +519,235 @@
                     <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
                         <div class="py-4">
                             <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
-                            <img src="https://lh3.googleusercontent.com/d/1kxe1usd4GZaocsTbK7qbWKGGRN_k2-Xx" 
-                                 alt="Certificate Preview" 
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
                                  class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
                         </div>
                     </div>
                 
                     <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-                        <span class="font-medium text-slate-600">Smart Agriculture Tech</span>
+                        <span class="font-medium text-slate-600">Other Skillsets</span>
                         <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
                             <span class="expand-text">Tap to expand</span>
                             <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
                         </div>
                     </div>
                 </div>
-                <!-- Cert 2 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+
+                <!-- Cert 8 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-bold text-xs border border-indigo-200">Apr 2025</span>
-                            <i class="fa-solid fa-camera text-indigo-500 text-lg"></i>
+                            <i class="fa-solid fa-certificate text-indigo-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">NADI Mahir Asas – Mahir Foto</h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">NADI Mahir Asas - Mahir Foto</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">NADI X Pembelajaran Sepanjang Hayat</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span>Digital Photography</span>
-                        <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Multimedia Freelancer</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Cert 3 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                <!-- Cert 9 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-sky-50 text-sky-700 font-bold text-xs border border-sky-200">Oct 2023</span>
-                            <i class="fa-solid fa-brain text-sky-500 text-lg"></i>
+                            <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-bold text-xs border border-indigo-200">Nov 2023</span>
+                            <i class="fa-solid fa-chart-line text-purple-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Device Management with Microsoft Intune</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">STYAVA.DEV</p>
+                    </div>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Other Skillsets</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 10 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-bold text-xs border border-indigo-200">Oct 2023</span>
+                            <i class="fa-solid fa-chart-line text-purple-500 text-lg"></i>
                         </div>
                         <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Introduction to Azure Machine Learning</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">STYAVA.DEV</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span>Cloud & AI / ML</span>
-                        <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Other Skillsets</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Cert 4 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                <!-- Cert 10 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-brand-50 text-brand-700 font-bold text-xs border border-brand-200">Aug 2023</span>
-                            <i class="fa-solid fa-graduation-cap text-brand-500 text-lg"></i>
+                            <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-bold text-xs border border-indigo-200">Oct 2023</span>
+                            <i class="fa-solid fa-chart-line text-purple-500 text-lg"></i>
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Bachelors of Science in Software Convergence</h3>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Dashboard in an Hour Using Power BI</h3>
+                        <p class="text-xs text-slate-500 font-medium mb-3">STYAVA.DEV</p>
+                    </div>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Other Skillsets</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cert 11 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 font-bold text-xs border border-indigo-200">Aug 2023</span>
+                            <i class="fa-solid fa-graduation-cap text-rose-500 text-lg"></i>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Bachelor of Science in Software Convergence</h3>
                         <p class="text-xs text-slate-500 font-medium mb-3">Konkuk University</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span>Degree Certification</span>
-                        <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Academics</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Cert 5 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                <!-- Cert 12 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 font-bold text-xs border border-rose-200">Feb 2019</span>
-                            <i class="fa-solid fa-language text-rose-500 text-lg"></i>
+                            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 font-bold text-xs border border-indigo-200">Feb 2019</span>
+                            <i class="fa-solid fa-graduation-cap text-rose-500 text-lg"></i>
                         </div>
                         <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Korean Language Training Intensive Course</h3>
-                        <p class="text-xs text-slate-500 font-medium mb-3">Ewha Language Center, Ewha Womans University</p>
+                        <p class="text-xs text-slate-500 font-medium mb-3">Ewha Language Center, Ewha Womens University</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span>Linguistic Proficiency</span>
-                        <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src="/Assets/CERT_BPLC.jpg" 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
+                        </div>
+                    </div>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Academics</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Cert 6 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                <!-- Cert 13 -->
+                <!-- Expandable Certification Card -->
+                <div onclick="toggleCertCard(this)" class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between cursor-pointer hover:border-brand-500 transition-all select-none">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-700 font-bold text-xs border border-purple-200">Nov 2018</span>
-                            <i class="fa-solid fa-flask text-purple-500 text-lg"></i>
+                            <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-700 font-bold text-xs border border-indigo-200">Nov 2018</span>
+                            <i class="fa-solid fa-graduation-cap text-rose-500 text-lg"></i>
                         </div>
                         <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Foundation in Science & Tech for Korean University</h3>
-                        <p class="text-xs text-slate-500 font-medium mb-3">Kementerian Pendidikan Tinggi (KPT)</p>
+                        <p class="text-xs text-slate-500 font-medium mb-3">UniKL MiiT</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span>Pre-University Certification</span>
-                        <i class="fa-solid fa-circle-check text-emerald-500"></i>
-                    </div>
-                </div>
-
-                <!-- Cert 7 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between md:col-span-2 lg:col-span-1">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200">Mar 2017</span>
-                            <i class="fa-solid fa-award text-slate-500 text-lg"></i>
+                
+                    <!-- Expandable Image Preview Container (Hidden by default, expands on click) -->
+                    <div class="expandable-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+                        <div class="py-4">
+                            <!-- REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL CERTIFICATE IMAGE LINK -->
+                            <img src=" " 
+                                 alt="Course Completed, Waiting for Certificate" 
+                                 class="w-full h-auto max-h-96 object-contain rounded-xl border border-slate-200 shadow-inner">
                         </div>
-                        <h3 class="font-heading text-lg font-bold text-slate-900 mb-1">Sijil Pelajaran Malaysia (SPM)</h3>
-                        <p class="text-xs text-slate-500 font-medium mb-3">Kementerian Pendidikan Malaysia (KPM)</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                        <span>National Secondary Certificate</span>
-                        <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                
+                    <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                        <span class="font-medium text-slate-600">Academics</span>
+                        <div class="flex items-center gap-1.5 text-brand-600 font-semibold">
+                            <span class="expand-text">Tap to expand</span>
+                            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300 chevron-icon"></i>
+                        </div>
                     </div>
                 </div>
 
